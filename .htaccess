@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule user/(.*)$ read_single.php?id=$1 [QSA,NC,L]
+RewriteRule user read.php [QSA,NC,L]
+RewriteRule contact/(.*)$ read_contact_single.php?id=$1 [QSA,NC,L]
+RewriteRule contact read_contact.php [QSA,NC,L]
+</IfModule>
